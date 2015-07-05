@@ -16,9 +16,21 @@
       <tr>
         <td><%= todo.title %></td>
         <td><%= todo.notes %></td>
-        <td><%= link_to 'Show', todo, class: "btn btn-primary btn-xs" %></td>
-        <td><%= link_to 'Edit', edit_todo_path(todo), class: "btn btn-info btn-xs" %></td>
-        <td><%= link_to 'Destroy', todo, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-xs" %></td>
+        <td>
+          <%= link_to todo, class: "btn btn-primary btn-xs" do %>
+            <i class="glyphicon glyphicon-list-alt"></i> Show
+          <% end %>
+        </td>
+        <td>
+          <%= link_to edit_todo_path(todo), class: "btn btn-info btn-xs" do %>
+            <i class="glyphicon glyphicon-pencil"></i> Edit
+          <% end %>
+        </td>
+        <td>
+          <%= link_to todo, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-xs" do %>
+            <i class="glyphicon glyphicon-remove"></i> Destroy
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +38,9 @@
 
 <br>
 
+<!--
 <%= link_to 'New Todo', new_todo_path, class: "btn btn-success" %>
+-->
+<%= link_to new_todo_path, class: "btn btn-success" do %>
+  <i class="glyphicon glyphicon-plus"></i> New Todo
+<% end %>
