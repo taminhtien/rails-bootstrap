@@ -24,7 +24,35 @@
     <% @todos.each do |todo| %>
       <tr>
         <td><%= todo.title %></td>
-        <td><%= todo.notes %></td>
+        <td>
+        <% if todo.notes? %>
+          <!-- Button trigger modal -->
+          <button class="btn btn-link" data-toggle="modal" data-target="#todo-<%= todo.id %>-notes">
+            View notes
+          </button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="todo-<%= todo.id %>-notes" tabindex="-1" role="dialog" aria-labelledby="todo-<%= todo.id %>-label" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="todo-<%= todo.id %>-label">
+                    Notes
+                  </h4>
+                </div>
+                <div class="modal-body">
+                  <%= todo.notes %>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" data-dismiss="modal">
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+        </td>
         <td>
           <%= link_to todo, class: "btn btn-primary btn-xs" do %>
             <i class="glyphicon glyphicon-list-alt"></i> Show
