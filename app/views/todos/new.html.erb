@@ -2,4 +2,6 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Back', todos_path %>
+<%= link_to todos_path, class: "btn btn-primary" do %>
+	<i class="gplyphicon gplyphicon-plus"></i> Back
+<% end %>
