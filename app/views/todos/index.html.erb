@@ -23,7 +23,11 @@
   <tbody>
     <% @todos.each do |todo| %>
       <tr>
-        <td><%= todo.title %></td>
+        <td>
+          <span class="has-tooltip" data-toggle="tooltip" title="<%= "Created on #{todo.created_at.strftime("%m/%e/%Y at %w:%M %p")}, Last modified on #{todo.updated_at.strftime("%m/%e/%Y at %w:%M %p")}" %>">
+            <%= todo.title %>
+          </span>
+        </td>
         <td>
         <% if todo.notes? %>
           <!-- Button trigger modal -->
