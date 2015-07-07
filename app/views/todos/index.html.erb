@@ -34,6 +34,8 @@
           <button class="btn btn-link" data-toggle="modal" data-target="#todo-<%= todo.id %>-notes">
             View notes
           </button>
+          
+           <button type="button" class="btn btn-link has-popover" data-toggle="popover" title="Notes" data-content="<%= todo.notes %>">View notes (popover)</button>
 
           <!-- Modal -->
           <div class="modal fade" id="todo-<%= todo.id %>-notes" tabindex="-1" role="dialog" aria-labelledby="todo-<%= todo.id %>-label" aria-hidden="true">
