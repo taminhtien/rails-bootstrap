@@ -24,7 +24,7 @@
     <% @todos.each do |todo| %>
       <tr>
         <td>
-          <span class="has-tooltip" data-toggle="tooltip" title="<%= "Created on #{todo.created_at.strftime("%m/%e/%Y at %w:%M %p")}, Last modified on #{todo.updated_at.strftime("%m/%e/%Y at %w:%M %p")}" %>">
+          <span class="has-tooltip" data-toggle="tooltip" data-placement="top" title="<%= "Created on #{todo.created_at.strftime("%m/%e/%Y at %w:%M %p")}, Last modified on #{todo.updated_at.strftime("%m/%e/%Y at %w:%M %p")}" %>">
             <%= todo.title %>
           </span>
         </td>
